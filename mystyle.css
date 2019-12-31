@@ -48,14 +48,16 @@ a {
     height: 100%;
     width: 100%;
 }
-#quote {
-    quotes: U+201C U+201D;
-}
-#text {
-    /* background-image: linear-gradient(#50879d, #a6cad5); */
+#text-wrapper {
     padding-top: 20%;
     padding-left: 30%;
 }
+#quote {
+    quotes: U+201C U+201D;
+}
+/* #text {
+    background-image: linear-gradient(#50879d, #a6cad5);
+} */
 #bottom {
     padding-top: 3%;
     padding-bottom: 10%;
