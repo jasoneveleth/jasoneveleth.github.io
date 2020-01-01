@@ -61,7 +61,8 @@ a {
 #arrow {
     height: 64px;
     width: 64px;
-    align-content: center;
+    margin-left: 45%;
+    margin-top: 30%;
     background-image: url("DownArrow.png");
 }
 #bottom {
