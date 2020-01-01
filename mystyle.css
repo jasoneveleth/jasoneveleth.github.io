@@ -58,6 +58,12 @@ a {
 /* #text {
     background-image: linear-gradient(#50879d, #a6cad5);
 } */
+#arrow {
+    height: 64px;
+    width: 64px;
+    align-content: center;
+    background-image: url("DownArrow.png");
+}
 #bottom {
     padding-top: 3%;
     padding-bottom: 10%;
