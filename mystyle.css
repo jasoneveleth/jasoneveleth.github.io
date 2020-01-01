@@ -58,7 +58,7 @@ a {
 /* #text {
     background-image: linear-gradient(#50879d, #a6cad5);
 } */
-#img {
+img {
     margin-left: 25%;
     margin-top: 25%;
     /* background-image: url("DownArrow.png"); */
