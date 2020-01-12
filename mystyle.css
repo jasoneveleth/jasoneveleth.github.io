@@ -57,12 +57,12 @@ a {
 }
 #image-wrapper {
     text-align: center;
+    width: 100%;
 }
 img {
     position: absolute;
     bottom: 0;
     display: inline-block;
-    /* background-image: url("DownArrow.png"); */
 }
 #bottom {
     padding-top: 3%;
