@@ -55,12 +55,13 @@ a {
 #quote {
     quotes: U+201C U+201D;
 }
-/* #text {
-    background-image: linear-gradient(#50879d, #a6cad5);
-} */
+#image-wrapper {
+    text-align: center;
+}
 img {
     position: absolute;
     bottom: 0;
+    display: inline-block;
     /* background-image: url("DownArrow.png"); */
 }
 #bottom {

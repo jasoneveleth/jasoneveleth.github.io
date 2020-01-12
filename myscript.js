@@ -9,3 +9,9 @@ window.addEventListener('load', function() {
         alert("This was my senior quote");
     };
 });
+
+window.addEventListener('load', function() {
+    document.getElementById("arrow").onclick = function(event) {
+        document.getElementById('bottom').scrollIntoView();
+    };
+});
