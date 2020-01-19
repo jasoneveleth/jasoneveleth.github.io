@@ -77,6 +77,12 @@ img {
 .table-cell h1 {
     color: orange;
 }
+#projects h1 {
+    color: orange;
+}
+#projects {
+    margin-left: 40%;
+}
 
 /* links */
 
