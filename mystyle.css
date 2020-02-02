@@ -90,12 +90,12 @@ img {
     float: none;
 }
 
-#instagram {
-    /* border-style: solid;
-    border-color: #00719e; */
+/* #instagram {
+    border-style: solid;
+    border-color: #00719e;
     float: left;
     margin-left: 0%;
-}
+} */
 #youtube {
     /* border-style: solid;
     border-color: #00719e; */
@@ -108,13 +108,13 @@ img {
     float: left;
     margin-left: 1%;
 }
-img {
-    height: 16px;
-}
 .insta {
     float: left;
     margin-left: 0%;
     height: 16px;
+}
+#instagram {
+    height: 16px
 }
 /* .insta:before {
     content: url(Instagram.png);
