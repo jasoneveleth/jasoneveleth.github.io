@@ -89,42 +89,11 @@ img {
 .social {
     float: none;
 }
-
-/* #instagram {
-    border-style: solid;
-    border-color: #00719e;
-    float: left;
-    margin-left: 0%;
-} */
-/* #youtube {
-    /* border-style: solid;
-    border-color: #00719e; */
-    float: left;
-    margin-left: 1%;
-}
-#facebook {
-    /* border-style: solid;
-    border-color: #00719e; */
-    float: left;
-    margin-left: 1%;
-} */
 .link {
     float: left;
     margin-left: 0%;
-/*     height: 16px; */
 }
 .image {
     height: 32px
+    width: auto;
 }
-/* .insta:before {
-    content: url(Instagram.png);
-} */
-/* .tube:before {
-    content: url(icon-youtube.svg);
-} */
-/* .tube:before {
-    content: url(Youtube.png);
-}
-.face:before {
-    content: url(Facebook.png);
-} */
