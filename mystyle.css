@@ -83,7 +83,7 @@ img {
 #projects {
     margin-left: 40%;
 }
-td {
+td, tr {
     width: 100%;
 }
 
