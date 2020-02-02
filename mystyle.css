@@ -95,18 +95,21 @@ img {
     border-color: #00719e; */
     float: left;
     margin-left: 0%;
+    height: 16px;
 }
 #youtube {
     /* border-style: solid;
     border-color: #00719e; */
     float: left;
     margin-left: 1%;
+    height: 16px;
 }
 #facebook {
     /* border-style: solid;
     border-color: #00719e; */
     float: left;
     margin-left: 1%;
+    height: 16px;
 }
 
 .insta:before {
