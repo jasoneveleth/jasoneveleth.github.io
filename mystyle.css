@@ -12,6 +12,14 @@ html, body {
     height: 100%;
     width: 100%
 }
+td, tr {
+    width: 100%;
+}
+img {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+}
 
 /* font */
 
@@ -31,12 +39,19 @@ p {
     margin-bottom: 0.5%;
 }
 a {
-    text-align: left;
-    /* background-color: #00719e; */
+/*     text-align: left;
+    background-color: #00719e;
     color: transparent;
-    /* font-size: 20px; */
+    font-size: 20px;
     text-decoration: none;
-    background-size: cover;
+    background-size: cover; */
+    width: 100%;
+}
+.table-cell h1 {
+    color: orange;
+}
+#projects h1 {
+    color: orange;
 }
 
 /* div ids */
@@ -59,11 +74,6 @@ a {
     text-align: center;
     width: 100%;
 }
-img {
-    position: absolute;
-    bottom: 0;
-    display: inline-block;
-}
 #bottom {
     padding-top: 3%;
     padding-bottom: 10%;
@@ -74,17 +84,8 @@ img {
     table-layout: fixed;
     margin-left: 2%;
 }
-.table-cell h1 {
-    color: orange;
-}
-#projects h1 {
-    color: orange;
-}
 #projects {
     margin-left: 40%;
-}
-td, tr {
-    width: 100%;
 }
 
 /* links */
