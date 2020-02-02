@@ -92,10 +92,10 @@ img {
 }
 .link {
     float: left;
-    width: 10%;
-    margin-left: 1%;
+    width: 20%;
+    margin-left: 2%;
 }
 .image {
-    height: 32px
+    height: 32px;
     width: auto;
 }
