@@ -88,10 +88,12 @@ img {
 
 .social {
     float: none;
+    width: 100%;
 }
 .link {
     float: left;
-    margin-left: 0%;
+    width: 10%;
+    margin-left: 1%;
 }
 .image {
     height: 32px
