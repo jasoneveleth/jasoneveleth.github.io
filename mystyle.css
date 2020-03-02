@@ -86,6 +86,9 @@ a {
 #projects {
     margin-left: 40%;
 }
+#arrow {
+    position: absolute;
+}    
 
 /* links */
 
