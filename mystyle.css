@@ -98,7 +98,7 @@ a {
 }
 .link {
     float: left;
-    width: 20%;
+    width: auto;
     margin-left: 2%;
 }
 .image {
