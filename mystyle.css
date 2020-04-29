@@ -12,7 +12,7 @@ html, body {
     height: 100%;
     width: 100%
 }
-td, tr {
+td, tr, a {
     width: 100%;
 }
 img {
@@ -21,30 +21,19 @@ img {
 }
 
 /* font */
-
-h1 {
+h1, p {
     text-align: left;
-    font-size: x-large;
     font-family: sans-serif;
     color: #ffffff;
     margin-top: 0;
+}
+h1 {
+    font-size: x-large;
 }
 p {
-    text-align: left;
+
     font-size: large;
-    color: #ffffff;
-    font-family: sans-serif;
-    margin-top: 0;
     margin-bottom: 0.5%;
-}
-a {
-/*     text-align: left;
-    background-color: #00719e;
-    color: transparent;
-    font-size: 20px;
-    text-decoration: none;
-    background-size: cover; */
-    width: 100%;
 }
 .table-cell h1 {
     color: orange;
@@ -63,8 +52,10 @@ a {
     width: 100%;
 }
 #text-wrapper {
-    padding-top: 20%;
-    padding-left: 30%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 #quote {
     quotes: U+201C U+201D;
