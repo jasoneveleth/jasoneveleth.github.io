@@ -15,7 +15,8 @@ html, body {
 td, tr, a {
     width: 100%;
 }
-img {
+#arrow {
+    position: absolute;
     bottom: 0;
     display: inline-block;
 }
@@ -31,7 +32,6 @@ h1 {
     font-size: x-large;
 }
 p {
-
     font-size: large;
     margin-bottom: 0.5%;
 }
@@ -45,7 +45,7 @@ p {
 /* div ids */
 
 #main-screen-wrapper {
-    background-image: url("background.jpeg");
+    background-image: url("/images/background.jpeg");
     background-attachment: fixed;
     background-size: cover;
     height: 100%;
@@ -53,9 +53,9 @@ p {
 }
 #text-wrapper {
     top: 50%;
+    left: 30%;
     position: absolute;
     transform: translate(-50%, -50%);
-    text-align: center;
 }
 #quote {
     quotes: U+201C U+201D;
@@ -76,10 +76,7 @@ p {
 }
 #projects {
     margin-left: 40%;
-}
-#arrow {
-    position: absolute;
-}    
+} 
 
 /* links */
 
