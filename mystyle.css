@@ -19,6 +19,8 @@ td, tr, a {
     position: absolute;
     bottom: 0;
     display: inline-block;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 /* font */
@@ -42,8 +44,6 @@ p {
     color: orange;
 }
 
-/* div ids */
-
 #main-screen-wrapper {
     background-image: url("/images/background.jpeg");
     background-attachment: fixed;
@@ -53,16 +53,12 @@ p {
 }
 #text-wrapper {
     top: 50%;
-    left: 30%;
+    left: 32%;
     position: absolute;
     transform: translate(-50%, -50%);
 }
 #quote {
     quotes: U+201C U+201D;
-}
-#image-wrapper {
-    text-align: center;
-    width: 100%;
 }
 #bottom {
     padding-top: 3%;
@@ -76,7 +72,7 @@ p {
 }
 #projects {
     margin-left: 40%;
-} 
+}
 
 /* links */
 
