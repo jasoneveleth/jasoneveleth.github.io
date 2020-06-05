@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById("text").onclick = function(event) {
+    document.getElementById("text-wrapper").onclick = function(event) {
         alert("You clicked text!");
     };
 });
