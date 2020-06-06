@@ -70,6 +70,7 @@ p {
 }
 #contacts {
     display: flex;
+    flex-direction: column;
 }
 
 #social {
@@ -78,7 +79,6 @@ p {
 }
 .link {
     width: auto;
-    margin-right: 2%;
     height: 16px;
 }
 .image {
