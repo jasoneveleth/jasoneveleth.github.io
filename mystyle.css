@@ -12,6 +12,9 @@ html, body {
 td {
     vertical-align: top;
 }
+svg {
+    height: 16px;
+}
 #arrow {
     position: absolute;
     bottom: 0;
@@ -65,15 +68,18 @@ p {
 #projects {
     margin-left: 40%;
 }
+#contacts {
+    display: flex;
+}
 
 #social {
     float: none;
     width: 100%;
 }
 .link {
-    float: left;
     width: auto;
     margin-right: 2%;
+    height: 16px;
 }
 .image {
     height: 32px;
