@@ -1,6 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
 html, body {
     background-color: #707070;
     margin: 0px;
@@ -27,21 +24,19 @@ td {
 h1, p {
     text-align: left;
     font-family: sans-serif;
-    color: #ffffff;
     margin-top: 0;
 }
 h1 {
     font-size: x-large;
+    color: orange;
 }
 p {
+    color: #ffffff;
     font-size: large;
     margin-bottom: 0.5%;
 }
-.table-cell h1 {
-    color: orange;
-}
-#projects h1 {
-    color: orange;
+#text-wrapper h1 {
+    color: #ffffff
 }
 
 #main-screen-wrapper {
@@ -80,7 +75,7 @@ p {
 .link {
     float: left;
     width: auto;
-    margin-left: 2%;
+    margin-right: 2%;
 }
 .image {
     height: 32px;
