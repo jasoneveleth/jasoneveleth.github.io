@@ -12,8 +12,8 @@ html, body {
     height: 100%;
     width: 100%
 }
-td, tr, a {
-    width: 100%;
+td {
+    vertical-align: top;
 }
 #arrow {
     position: absolute;
@@ -56,9 +56,6 @@ p {
     left: 32%;
     position: absolute;
     transform: translate(-50%, -50%);
-}
-#quote {
-    quotes: U+201C U+201D;
 }
 #bottom {
     padding-top: 3%;
