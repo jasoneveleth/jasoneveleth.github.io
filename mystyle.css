@@ -38,19 +38,14 @@ body {
 }
 
 /* font */
-h1, p {
-    text-align: left;
+* {
     font-family: sans-serif;
-    margin-top: 0;
-}
-h1 {
-    font-size: x-large;
-    color: orange;
-}
-p {
     color: #ffffff;
     font-size: large;
 }
-#text-wrapper h1 {
-    color: #ffffff
+h1 {
+    font-size: x-large;
+}
+.item h1 {
+    color: orange;
 }
