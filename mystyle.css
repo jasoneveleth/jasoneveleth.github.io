@@ -15,13 +15,6 @@ td {
 svg {
     height: 32px;
 }
-#arrow {
-    position: absolute;
-    bottom: 0;
-    display: inline-block;
-    left: 50%;
-    transform: translate(-50%);
-}
 #main-screen-wrapper {
     background-image: url("/images/background.jpeg");
     background-attachment: fixed;
@@ -37,6 +30,8 @@ svg {
 }
 #bottom {
     width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 #table {
     padding-top: 3%;
