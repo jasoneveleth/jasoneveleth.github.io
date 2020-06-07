@@ -2,8 +2,8 @@ html, body {
     background-color: #707070;
     margin: 0;
     padding: 0;
+    width: 100%;
     height: 100%;
-    width: 100%
 }
 body {
     background-image: url("/images/background.jpeg");
@@ -47,7 +47,6 @@ svg {
     font-weight: bold;
     font-size: small;
     width: fit-content;
-
 }
 .button:hover {
     background-color: #fff;
