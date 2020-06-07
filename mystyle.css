@@ -34,7 +34,7 @@ body {
 }
 .box {
     padding: 11%;
-    background-color: #000;
+    background-color: transparent;
     border-style: solid;
     border-color: #fff;
     text-align: center;
