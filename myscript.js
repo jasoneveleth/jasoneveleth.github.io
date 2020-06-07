@@ -25,8 +25,21 @@ function iOS() {
         for (c of children) {
             c.style.width = "70%";
         }
-        // bottom.style.bottom = "unset";
-        // bottom.style.top = "0";
+        
+        for (c of document.getElementsByTagName('p')) {
+            c.style.fontSize = "1.5em";
+        }
+        for (c of document.getElementsByTagName('h1')) {
+            c.style.fontSize = "2em";
+        }
+
+        let newDiv = document.createElement("div");
+        document.body.insertBefore(newDiv, bottom);
+        newDiv.style.height = "100%";
+        newDiv.style.width = "100%";
+        bottom.style.position = "unset";
+        bottom.style.paddingTop = "10%";
+        bottom.scrollIntoView();
     }
 }
 
