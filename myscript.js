@@ -25,8 +25,8 @@ function iOS() {
         for (c of children) {
             c.style.width = "70%";
         }
-        bottom.style.bottom = "unset";
-        bottom.style.top = "0";
+        // bottom.style.bottom = "unset";
+        // bottom.style.top = "0";
     }
 }
 
