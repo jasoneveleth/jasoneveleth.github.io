@@ -3,16 +3,33 @@ iOS()
 function iOS() {
     console.log("here")
     let user = navigator.userAgent;
-    if (user.includes("iPhone") || user.includes("Andriod")) {
+    // if (user.includes("iPhone") || user.includes("Andriod")) {
         let bottom = document.getElementById("bottom");
         let higher = document.getElementById("top");
-        bottom.children[0].insertBefore(higher);
-        document.body.removeChild(document.body.children[0]);
+        higher.style.top = "auto";
+        higher.style.left = "auto";
+        higher.style.position = "static";
+        higher.style.transform = "none";
+
+
+        bottom.insertBefore(higher, bottom.children[0]);
         higher.classList.add('item');
-        bottom.style.flexDirection = 'column'
-    } else {
-        // Do something
-    }
+        bottom.style.flexDirection = 'column';
+
+        let children = bottom.children;
+        for (let c of children) {
+            c.style.margin = "auto";
+        }
+
+        children = document.getElementsByClassName("item");
+        for (c of children) {
+            c.style.width = "70%";
+        }
+        bottom.style.bottom = "unset";
+        bottom.style.top = "0";
+    // } else {
+    //     // Do something
+    // }
 }
 
 function yee(id) {
