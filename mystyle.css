@@ -22,9 +22,9 @@ svg {
     height: 100%;
     width: 100%;
 }
-#text-wrapper {
+#top {
     top: 50%;
-    left: 32%;
+    left: 75%;
     position: absolute;
     transform: translate(-50%, -50%);
 }
@@ -32,13 +32,14 @@ svg {
     width: 100%;
     position: absolute;
     bottom: 0;
-}
-#table {
-    width: 100%;
-    table-layout: fixed;
-}
-#contact {
     display: flex;
+    justify-content: space-around;
+}
+#icons {
+    display: flex;
+}
+.item {
+    width: 33%;
 }
 
 /* font */
