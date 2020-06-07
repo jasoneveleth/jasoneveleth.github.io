@@ -36,12 +36,25 @@ body {
 .item {
     width: 33%;
 }
+.box {
+    padding: 5%;
+    background-color: #000;
+    border-style: solid;
+    border-color: #fff;
+    text-align: center;
+    font-size: small;
+}
+.box:hover {
+    background-color: #fff;
+    color: #000;
+}
 
 /* font */
 * {
     font-family: sans-serif;
     color: #ffffff;
     font-size: large;
+    text-decoration: none;
 }
 h1 {
     font-size: x-large;
