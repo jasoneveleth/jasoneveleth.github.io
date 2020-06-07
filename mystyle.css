@@ -34,8 +34,6 @@ svg {
     bottom: 0;
 }
 #table {
-    padding-top: 3%;
-    padding-bottom: 10%;
     width: 100%;
     table-layout: fixed;
 }
