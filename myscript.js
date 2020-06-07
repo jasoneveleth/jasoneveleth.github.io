@@ -4,13 +4,12 @@ function iOS() {
     console.log("here")
     let user = navigator.userAgent;
     if (user.includes("iPhone") || user.includes("Andriod")) {
-        document.body.innerHTML = ''
-        // let bottom = document.getElementById("bottom");
-        // let top = document.getElementById("top");
-        // bottom.children[0].insertBefore(top);
-        // document.body.removeChild(document.body.children[0]);
-        // top.classList.add('item');
-        // bottom.style.flexDirection = 'column'
+        let bottom = document.getElementById("bottom");
+        let top = document.getElementById("top");
+        bottom.children[0].insertBefore(top);
+        document.body.removeChild(document.body.children[0]);
+        top.classList.add('item');
+        bottom.style.flexDirection = 'column'
     } else {
         // Do something
     }
