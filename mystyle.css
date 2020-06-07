@@ -22,26 +22,6 @@ svg {
     left: 50%;
     transform: translate(-50%);
 }
-
-/* font */
-h1, p {
-    text-align: left;
-    font-family: sans-serif;
-    margin-top: 0;
-}
-h1 {
-    font-size: x-large;
-    color: orange;
-}
-p {
-    color: #ffffff;
-    font-size: large;
-    margin-bottom: 0.5%;
-}
-#text-wrapper h1 {
-    color: #ffffff
-}
-
 #main-screen-wrapper {
     background-image: url("/images/background.jpeg");
     background-attachment: fixed;
@@ -56,15 +36,32 @@ p {
     transform: translate(-50%, -50%);
 }
 #bottom {
-    padding-top: 3%;
-    padding-bottom: 10%;
     width: 100%;
 }
 #table {
-    width: 98%;
+    padding-top: 3%;
+    padding-bottom: 10%;
+    width: 100%;
     table-layout: fixed;
-    margin-left: 2%;
 }
-#contacts {
+#contact {
     display: flex;
+}
+
+/* font */
+h1, p {
+    text-align: left;
+    font-family: sans-serif;
+    margin-top: 0;
+}
+h1 {
+    font-size: x-large;
+    color: orange;
+}
+p {
+    color: #ffffff;
+    font-size: large;
+}
+#text-wrapper h1 {
+    color: #ffffff
 }
