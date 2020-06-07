@@ -4,14 +4,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     };
 });
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById("quote").onclick = function(event) {
-        alert("This was my senior quote");
-    };
-});
+function yee(id) {
+    list = document.getElementsByClassName('link');
+    for (ele in list) {
+        ele.style.opacity = "0.5";
+    }
+    document.getElementById(id).style.opacity = "1";
+}
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById("arrow").onclick = function(event) {
+document.addEventListener("DOMContentLoaded", (event) => {
+    document.getElementById("arrow").onclick = (event) => {
         document.getElementById('bottom').scrollIntoView();
     };
 });
