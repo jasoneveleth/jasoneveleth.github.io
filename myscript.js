@@ -40,6 +40,9 @@ function iOS() {
         bottom.style.position = "unset";
         bottom.style.paddingTop = "10%";
         bottom.scrollIntoView();
+        for (c of document.getElementById('contact').children) {
+            c.onmouseover = "";
+        }
     }
 }
 
