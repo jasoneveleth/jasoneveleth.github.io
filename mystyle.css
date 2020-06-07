@@ -65,12 +65,8 @@ p {
     table-layout: fixed;
     margin-left: 2%;
 }
-#projects {
-    margin-left: 40%;
-}
 #contacts {
     display: flex;
-    flex-direction: column;
 }
 
 #social {
@@ -80,8 +76,4 @@ p {
 .link {
     width: auto;
     height: 16px;
-}
-.image {
-    height: 32px;
-    width: auto;
 }
