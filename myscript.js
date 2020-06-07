@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function yee(id) {
     let list = document.getElementsByClassName('link');
-    let ele;
-    for (ele in list) {
+    for (let ele of list) {
         ele.style.opacity = "0.5";
     }
     document.getElementById(id).style.opacity = "1";
