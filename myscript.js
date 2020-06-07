@@ -3,7 +3,7 @@ iOS()
 function iOS() {
     console.log("here")
     let user = navigator.userAgent;
-    // if (user.includes("iPhone") || user.includes("Andriod")) {
+    if (user.includes("iPhone") || user.includes("Andriod")) {
         let bottom = document.getElementById("bottom");
         let higher = document.getElementById("top");
         higher.style.top = "auto";
@@ -27,9 +27,7 @@ function iOS() {
         }
         bottom.style.bottom = "unset";
         bottom.style.top = "0";
-    // } else {
-    //     // Do something
-    // }
+    }
 }
 
 function yee(id) {
