@@ -62,3 +62,6 @@ h1 {
 .item h1 {
     color: orange;
 }
+#top p {
+    margin-bottom: -0.5em;
+}
