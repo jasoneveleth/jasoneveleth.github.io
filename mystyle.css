@@ -9,18 +9,13 @@ html, body {
     height: 100%;
     width: 100%
 }
-td {
-    vertical-align: top;
-}
 svg {
     height: 32px;
 }
-#main-screen-wrapper {
+body {
     background-image: url("/images/background.jpeg");
     background-attachment: fixed;
     background-size: cover;
-    height: 100%;
-    width: 100%;
 }
 #top {
     top: 50%;

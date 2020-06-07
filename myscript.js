@@ -1,9 +1,3 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById("text-wrapper").onclick = function(event) {
-        alert("You clicked text!");
-    };
-});
-
 function yee(id) {
     let list = document.getElementsByClassName('link');
     for (let ele of list) {
@@ -19,8 +13,3 @@ function reset() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", (event) => {
-    document.getElementById("arrow").onclick = (event) => {
-        document.getElementById('bottom').scrollIntoView();
-    };
-});
