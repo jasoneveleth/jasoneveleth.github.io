@@ -13,7 +13,7 @@ td {
     vertical-align: top;
 }
 svg {
-    height: 16px;
+    height: 32px;
 }
 #arrow {
     position: absolute;
@@ -67,13 +67,4 @@ p {
 }
 #contacts {
     display: flex;
-}
-
-#social {
-    float: none;
-    width: 100%;
-}
-.link {
-    width: auto;
-    height: 16px;
 }
