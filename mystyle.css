@@ -12,6 +12,7 @@ body {
     background-image: url("/images/background.jpeg");
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
 }
 #top {
     top: 50%;
@@ -54,9 +55,6 @@ body {
     color: #ffffff;
     font-size: large;
     text-decoration: none;
-}
-p {
-    margin-top: 0;
 }
 h1 {
     font-size: x-large;
