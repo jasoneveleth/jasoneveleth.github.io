@@ -13,6 +13,7 @@ function yee(id) {
 }
 
 function reset() {
+    let list = document.getElementsByClassName('link');
     for (let ele of list) {
         ele.style.opacity = "1";
     }
