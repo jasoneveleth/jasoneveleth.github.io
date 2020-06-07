@@ -12,6 +12,12 @@ function yee(id) {
     document.getElementById(id).style.opacity = "1";
 }
 
+function reset() {
+    for (let ele of list) {
+        ele.style.opacity = "1";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("arrow").onclick = (event) => {
         document.getElementById('bottom').scrollIntoView();
