@@ -48,10 +48,12 @@ svg {
     font-size: small;
     width: fit-content;
 }
+/* This causes the dowload button to change color when clicked */
 .button:hover {
     background-color: #fff;
     color: #000;
 }
+/* This would cause similar effect as functions used to dim links icons */
 /* #contact:hover a svg {
     opacity: 0.5;
 }

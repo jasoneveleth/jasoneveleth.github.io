@@ -4,6 +4,7 @@ function iOS() {
     console.log("here")
     let user = navigator.userAgent;
     if (user.includes("iPhone") || user.includes("Andriod")) {
+        // Gets references to shuffle elememts around
         let bottom = document.getElementById("bottom");
         let higher = document.getElementById("top");
         higher.style.top = "auto";
@@ -11,11 +12,12 @@ function iOS() {
         higher.style.position = "static";
         higher.style.transform = "none";
 
-
+        // Adds the 'higher' div text to the bottom div (in front)
         bottom.insertBefore(higher, bottom.children[0]);
         higher.classList.add('item');
         bottom.style.flexDirection = 'column';
 
+        // This centers the elements in the 'bottom' div
         let children = bottom.children;
         for (let c of children) {
             c.style.margin = "auto";
@@ -46,6 +48,8 @@ function iOS() {
     }
 }
 
+
+// These two functions dim the links icons
 function yee(id) {
     let list = document.getElementsByTagName('svg');
     for (let ele of list) {
