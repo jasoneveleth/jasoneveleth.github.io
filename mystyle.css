@@ -32,8 +32,8 @@ p, h1, a, div {
 a {
     margin: 0;
 }
-h1 {
-    font-size: 4.8rem;
+#name {
+    font-size: 4.2rem;
     line-height: normal;
 }
 
