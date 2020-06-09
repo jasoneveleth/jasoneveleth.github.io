@@ -5,6 +5,9 @@ html, body {
     width: 100%;
     height: 100%;
 }
+html {
+    font-size: 62.5%;
+}
 body {
     background-image: url("/images/background.jpeg");
     background-attachment: fixed;
@@ -16,11 +19,26 @@ svg {
     height: 21px;
     fill: #fff;
 }
+/* font */
+/* This causes divs to have a margin! be careful */
+p, h1, a, div {
+    font-family: sans-serif;
+    color: #ffffff;
+    font-size: 1.6rem;
+    text-decoration: none;
+    line-height: 2rem;
+    margin: 1rem 0;
+}
+a {
+    margin: 0;
+}
+h1 {
+    font-size: 4.8rem;
+    line-height: normal;
+}
+
 .container {
     display: flex;
-}
-.item {
-    width: 25%;
 }
 #top {
     top: 50%;
@@ -28,16 +46,9 @@ svg {
     position: absolute;
     transform: translate(-50%, -50%);
 }
-#bottom {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    justify-content: space-around;
-}
 #contact {
     justify-content: space-between;
     max-width: 144px;
-    margin: 5% 0;
 }
 #button-wrapper {
     justify-content: flex-start;
@@ -49,11 +60,12 @@ svg {
     text-align: center;
     letter-spacing: 0.2em;
     font-weight: bold;
-    font-size: small;
+    font-size: 1.2rem;
     width: fit-content;
     text-transform: uppercase;
-    margin-right: 2em;
-    padding: 1em;
+    margin-right: 2rem;
+    padding: 0.8rem;
+    display: block;
 }
 
 /* This causes the dowload button to change color when clicked */
@@ -69,13 +81,3 @@ svg {
     opacity: 1;
 } */
 
-/* font */
-* {
-    font-family: sans-serif;
-    color: #ffffff;
-    font-size: large;
-    text-decoration: none;
-}
-h1 {
-    font-size: xx-large;
-}
