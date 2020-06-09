@@ -48,6 +48,8 @@ svg {
     font-size: small;
     width: fit-content;
 }
+
+
 /* This causes the dowload button to change color when clicked */
 .button:hover {
     background-color: #fff;
