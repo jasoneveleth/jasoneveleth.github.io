@@ -14,8 +14,25 @@ function reset() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => { iOS(); });
+document.addEventListener("DOMContentLoaded", iOS());
 window.addEventListener("resize", changeStyle);
+
+function iOS() {
+    let user = navigator.userAgent;
+    if (user.includes("iPhone") || user.includes("Android")) {
+        document.getElementsByTagName('html')[0].style.fontSize = "120%";
+        mobile()
+
+        // Disabling hover functionality
+        for (let e of document.getElementsByTagName('a')) {
+            e.onmouseover = "";
+        }
+        let hovers = document.getElementsByClassName('hover-able');
+        while (hovers[0]) {
+            hovers[0].classList.remove('hover-able');
+        }
+    }
+}
 
 function changeStyle() {
     if (document.documentElement.clientWidth * 1.5 < document.documentElement.clientHeight) {
@@ -46,21 +63,3 @@ function desktop() {
     fullscreen.style.margin = "initial";
     fullscreen.style.transform = "translate(-50%, -50%)";
 }
-
-function iOS() {
-    let user = navigator.userAgent;
-    if (user.includes("iPhone") || user.includes("Android")) {
-        document.getElementsByTagName('html')[0].style.fontSize = "120%";
-        mobile()
-
-        // Disabling hover functionality
-        for (let e of document.getElementsByTagName('a')) {
-            e.onmouseover = "";
-        }
-        let hovers = document.getElementsByClassName('hover-able');
-        while (hovers[0]) {
-            hovers[0].classList.remove('hover-able');
-        }
-    }
-}
-
