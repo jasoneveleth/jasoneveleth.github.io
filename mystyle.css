@@ -16,7 +16,7 @@ body {
 }
 svg {
     display: block;
-    height: 21px;
+    height: 2.1rem;
     fill: #fff;
 }
 /* font */
@@ -49,7 +49,7 @@ a {
 }
 #contact {
     justify-content: space-between;
-    max-width: 144px;
+    max-width: 14.4rem;
 }
 #button-wrapper {
     justify-content: flex-start;
