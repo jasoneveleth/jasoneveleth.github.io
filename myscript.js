@@ -14,77 +14,44 @@ function reset() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", changeStyle);
+document.addEventListener("DOMContentLoaded", () => { iOS(); });
 window.addEventListener("resize", changeStyle);
 
 function changeStyle() {
     if (document.documentElement.clientWidth * 1.5 < document.documentElement.clientHeight) {
-        fullscreen = document.getElementById("fullscreen");
-        fullscreen.style.backgroundColor = "#000";
-        fullscreen.style.top = "initial";
-        fullscreen.style.width = "90%";
-        fullscreen.style.left = "50%";
-        fullscreen.style.padding = "1rem 5%";
-        fullscreen.style.margin = "0";
-        fullscreen.style.marginBottom = String(document.documentElement.clientHeight) + "px";
-        fullscreen.style.transform = "translate(-50%,0%)";
+        mobile()
     } else {
-        fullscreen = document.getElementById("fullscreen");
-        fullscreen.style.backgroundColor = "initial";
-        fullscreen.style.top = "50%";
-        fullscreen.style.width = "initial";
-        fullscreen.style.left = "75%";
-        fullscreen.style.padding = "initial";
-        fullscreen.style.marginBottom = "initial";
-        fullscreen.style.transform = "translate(-50%, -50%)";
+        desktop()
     }
 }
 
+function mobile() {
+    fullscreen = document.getElementById("fullscreen");
+    fullscreen.style.backgroundColor = "#000";
+    fullscreen.style.top = "initial";
+    fullscreen.style.width = "90%";
+    fullscreen.style.left = "50%";
+    fullscreen.style.padding = "1rem 5%";
+    fullscreen.style.margin = "0";
+    fullscreen.style.transform = "translate(-50%,0%)";
+}
+
+function desktop() {
+    fullscreen = document.getElementById("fullscreen");
+    fullscreen.style.backgroundColor = "initial";
+    fullscreen.style.top = "50%";
+    fullscreen.style.width = "initial";
+    fullscreen.style.left = "75%";
+    fullscreen.style.padding = "initial";
+    fullscreen.style.margin = "initial";
+    fullscreen.style.transform = "translate(-50%, -50%)";
+}
+
 function iOS() {
-    console.log("here")
     let user = navigator.userAgent;
-    if (user.includes("iPhone") || user.includes("Andriod")) {
-        // Gets references to shuffle elememts around
-        let bottom = document.getElementById("bottom");
-        let higher = document.getElementById("top");
-        higher.style.top = "auto";
-        higher.style.left = "auto";
-        higher.style.position = "static";
-        higher.style.transform = "none";
-
-        // Adds the 'higher' div text to the bottom div (in front)
-        bottom.insertBefore(higher, bottom.children[0]);
-        higher.classList.add('item');
-        bottom.style.flexDirection = 'column';
-
-        // This centers the elements in the 'bottom' div
-        let children = bottom.children;
-        for (let c of children) {
-            c.style.margin = "auto";
-        }
-
-        children = document.getElementsByClassName("item");
-        for (c of children) {
-            c.style.width = "70%";
-        }
-        
-        for (c of document.getElementsByTagName('p')) {
-            c.style.fontSize = "1.5em";
-        }
-        for (c of document.getElementsByTagName('h1')) {
-            c.style.fontSize = "2em";
-        }
-
-        let newDiv = document.createElement("div");
-        document.body.insertBefore(newDiv, bottom);
-        newDiv.style.height = "100%";
-        newDiv.style.width = "100%";
-        bottom.style.position = "unset";
-        bottom.style.paddingTop = "10%";
-        bottom.scrollIntoView();
-        for (c of document.getElementById('contact').children) {
-            c.onmouseover = "";
-        }
+    if (user.includes("iPhone") || user.includes("Andriod") || user.includes("Mobile")) {
+        document.body.style.fontSize = "120%";
+        mobile()
     }
 }
 

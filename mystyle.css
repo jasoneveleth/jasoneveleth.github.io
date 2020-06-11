@@ -45,6 +45,7 @@ a {
     left: 75%;
     position: absolute;
     transform: translate(-50%, -50%);
+    margin: 0;
 }
 #contact {
     justify-content: space-between;
