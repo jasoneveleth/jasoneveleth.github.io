@@ -34,13 +34,13 @@ a {
 }
 #name {
     font-size: 4.2rem;
-    line-height: normal;
+    line-height: 0.7;
 }
 
 .container {
     display: flex;
 }
-#top {
+#fullscreen {
     top: 50%;
     left: 75%;
     position: absolute;

@@ -1,4 +1,27 @@
-iOS()
+// These two functions dim the links icons
+function yee(id) {
+    let list = document.getElementsByTagName('svg');
+    for (let ele of list) {
+        ele.style.opacity = "0.5";
+    }
+    document.getElementById(id).style.opacity = "1";
+}
+
+function reset() {
+    let list = document.getElementsByTagName('svg');
+    for (let ele of list) {
+        ele.style.opacity = "1";
+    }
+}
+
+
+
+
+window.addEventListener("resize", () => {
+    if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
+        
+    }
+});
 
 function iOS() {
     console.log("here")
@@ -48,19 +71,3 @@ function iOS() {
     }
 }
 
-
-// These two functions dim the links icons
-function yee(id) {
-    let list = document.getElementsByTagName('svg');
-    for (let ele of list) {
-        ele.style.opacity = "0.5";
-    }
-    document.getElementById(id).style.opacity = "1";
-}
-
-function reset() {
-    let list = document.getElementsByTagName('svg');
-    for (let ele of list) {
-        ele.style.opacity = "1";
-    }
-}
