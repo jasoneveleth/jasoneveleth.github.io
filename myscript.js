@@ -14,23 +14,31 @@ function reset() {
     }
 }
 
-window.addEventListener("resize", () => {
+document.addEventListener("DOMContentLoaded", changeStyle);
+window.addEventListener("resize", changeStyle);
+
+function changeStyle() {
     if (document.documentElement.clientWidth * 1.5 < document.documentElement.clientHeight) {
         fullscreen = document.getElementById("fullscreen");
-        fullscreen.style.backgroundColor = "#fff";
-        fullscreen.style.marginBottom = String(document.documentElement.clientHeight);
-        fullscreen.style.width = "100%";
+        fullscreen.style.backgroundColor = "#000";
+        fullscreen.style.top = "initial";
+        fullscreen.style.width = "90%";
         fullscreen.style.left = "50%";
+        fullscreen.style.padding = "1rem 5%";
+        fullscreen.style.margin = "0";
+        fullscreen.style.marginBottom = String(document.documentElement.clientHeight) + "px";
         fullscreen.style.transform = "translate(-50%,0%)";
-    }
-    else {
+    } else {
         fullscreen = document.getElementById("fullscreen");
+        fullscreen.style.backgroundColor = "initial";
         fullscreen.style.top = "50%";
+        fullscreen.style.width = "initial";
         fullscreen.style.left = "75%";
-        fullscreen.style.position = "absolute";
+        fullscreen.style.padding = "initial";
+        fullscreen.style.marginBottom = "initial";
         fullscreen.style.transform = "translate(-50%, -50%)";
     }
-});
+}
 
 function iOS() {
     console.log("here")
