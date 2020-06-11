@@ -26,7 +26,7 @@ function changeStyle() {
 }
 
 function mobile() {
-    fullscreen = document.getElementById("fullscreen");
+    let fullscreen = document.getElementById("fullscreen");
     fullscreen.style.backgroundColor = "#000";
     fullscreen.style.top = "initial";
     fullscreen.style.width = "90%";
@@ -37,7 +37,7 @@ function mobile() {
 }
 
 function desktop() {
-    fullscreen = document.getElementById("fullscreen");
+    let fullscreen = document.getElementById("fullscreen");
     fullscreen.style.backgroundColor = "initial";
     fullscreen.style.top = "50%";
     fullscreen.style.width = "initial";
@@ -51,8 +51,11 @@ function iOS() {
     let user = navigator.userAgent;
     if (user.includes("iPhone") || user.includes("Android")) {
         document.getElementsByTagName('html')[0].style.fontSize = "120%";
-        for (e of document.getElementsByTagName('a')) {
+        for (let e of document.getElementsByTagName('a')) {
             e.onmouseover = "";
+        }
+        for (let h of document.getElementsByClassName('hover-able')) {
+            h.classList.remove('hover-able');
         }
         mobile()
     }
