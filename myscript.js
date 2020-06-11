@@ -49,7 +49,7 @@ function desktop() {
 
 function iOS() {
     let user = navigator.userAgent;
-    if (user.includes("iPhone") || user.includes("Andriod") || user.includes("Mobile")) {
+    if (user.includes("iPhone") || user.includes("Android")) {
         document.body.style.fontSize = "120%";
         mobile()
     }
