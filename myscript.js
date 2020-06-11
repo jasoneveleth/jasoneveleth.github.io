@@ -51,7 +51,9 @@ function iOS() {
     let user = navigator.userAgent;
     if (user.includes("iPhone") || user.includes("Android")) {
         document.getElementsByTagName('html')[0].style.fontSize = "120%";
-        document.getElementsByTagName('a').onmouseover = "";
+        for (e of document.getElementsByTagName('a')) {
+            e.onmouseover = "";
+        }
         mobile()
     }
 }
