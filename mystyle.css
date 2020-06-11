@@ -70,7 +70,7 @@ a {
 }
 
 /* This causes the dowload button to change color when clicked */
-.fancy-button:hover {
+.hover-able:hover {
     background-color: #fff;
     color: #000;
 }
