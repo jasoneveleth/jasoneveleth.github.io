@@ -17,9 +17,18 @@ function reset() {
 window.addEventListener("resize", () => {
     if (document.documentElement.clientWidth * 1.5 < document.documentElement.clientHeight) {
         fullscreen = document.getElementById("fullscreen");
-        fullscreen.style.top = "0";
+        fullscreen.style.backgroundColor = "#fff";
+        fullscreen.style.marginBottom = str(document.documentElement.clientHeight);
+        fullscreen.style.width = "100%";
         fullscreen.style.left = "50%";
-        fullscreen.style.transform = "translate(-50%,0%)"
+        fullscreen.style.transform = "translate(-50%,0%)";
+    }
+    else {
+        fullscreen = document.getElementById("fullscreen");
+        fullscreen.style.top = "50%";
+        fullscreen.style.left = "75%";
+        fullscreen.style.position = "absolute";
+        fullscreen.style.transform = "translate(-50%, -50%)";
     }
 });
 
