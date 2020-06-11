@@ -54,8 +54,9 @@ function iOS() {
         for (let e of document.getElementsByTagName('a')) {
             e.onmouseover = "";
         }
-        for (let h of document.getElementsByClassName('hover-able')) {
-            h.classList.remove('hover-able');
+        let hovers = document.getElementsByClassName('hover-able');
+        while (hovers[0]) {
+            hovers[0].classList.remove('hover-able');
         }
         mobile()
     }
