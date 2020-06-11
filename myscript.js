@@ -1,6 +1,6 @@
 // These two functions dim the links icons
 function yee(id) {
-    let list = document.getElementsByTagName('svg');
+    let list = document.getElementsByClassName('icon');
     for (let ele of list) {
         ele.style.opacity = "0.5";
     }
@@ -8,7 +8,7 @@ function yee(id) {
 }
 
 function reset() {
-    let list = document.getElementsByTagName('svg');
+    let list = document.getElementsByClassName('icon');
     for (let ele of list) {
         ele.style.opacity = "1";
     }
@@ -19,7 +19,8 @@ function reset() {
 
 window.addEventListener("resize", () => {
     if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
-        
+        fullscreen = document.getElementById("fullscreen");
+
     }
 });
 
