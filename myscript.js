@@ -18,7 +18,8 @@ window.addEventListener("resize", () => {
     if (document.documentElement.clientWidth * 1.5 < document.documentElement.clientHeight) {
         fullscreen = document.getElementById("fullscreen");
         fullscreen.style.top = "0";
-        fullscreen.style.left = "0";
+        fullscreen.style.left = "50%";
+        fullscreen.style.transform = "translate(-50%,0%)"
     }
 });
 
