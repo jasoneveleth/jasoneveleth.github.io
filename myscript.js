@@ -18,7 +18,7 @@ window.addEventListener("resize", () => {
     if (document.documentElement.clientWidth * 1.5 < document.documentElement.clientHeight) {
         fullscreen = document.getElementById("fullscreen");
         fullscreen.style.backgroundColor = "#fff";
-        fullscreen.style.marginBottom = str(document.documentElement.clientHeight);
+        fullscreen.style.marginBottom = String(document.documentElement.clientHeight);
         fullscreen.style.width = "100%";
         fullscreen.style.left = "50%";
         fullscreen.style.transform = "translate(-50%,0%)";
