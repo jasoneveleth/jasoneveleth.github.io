@@ -14,13 +14,11 @@ function reset() {
     }
 }
 
-
-
-
 window.addEventListener("resize", () => {
-    if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
+    if (document.documentElement.clientWidth * 1.5 < document.documentElement.clientHeight) {
         fullscreen = document.getElementById("fullscreen");
-
+        fullscreen.style.top = "0";
+        fullscreen.style.left = "0";
     }
 });
 
