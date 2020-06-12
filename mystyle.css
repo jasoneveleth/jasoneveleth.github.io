@@ -22,7 +22,7 @@ svg {
 /* font */
 /* This causes divs to have a margin! be careful */
 p, h1, a, div {
-    font-family: sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #ffffff;
     font-size: 1.6rem;
     text-decoration: none;
