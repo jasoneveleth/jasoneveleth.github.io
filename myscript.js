@@ -14,7 +14,7 @@ function reset() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", iOS());
+document.addEventListener("DOMContentLoaded", iOS);
 window.addEventListener("resize", changeStyle);
 
 function iOS() {
