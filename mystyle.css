@@ -9,7 +9,7 @@ html {
     font-size: 62.5%;
 }
 body {
-    background-image: url("/images/background.jpeg");
+    background-image: url("images/background.jpeg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
