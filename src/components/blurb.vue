@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <img src="@/assets/memoji.png">
+    <img src="/assets/memoji.png">
     <div class="blurb">
       <h1>Hi! I'm Jason.</h1>
       <p>
