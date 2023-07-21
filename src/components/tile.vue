@@ -31,36 +31,38 @@ export default{
 
 <style scoped>
 .clicky {
+  padding: var(--padding) 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
+  background-color: var(--blurb-color);
 }
 .tile {
+  --padding: 5px;
   height: 400px;
   width: 400px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 img {
   object-fit: cover;
-  height: 400px; /* calc(400px - var(--border-size) - var(--border-size)); */
-  width: 400px; /* calc(400px - var(--border-size) - var(--border-size)); */
+  height: 100%; /* calc(400px - var(--border-size) - var(--border-size)); */
+  width: 100%; /* calc(400px - var(--border-size) - var(--border-size)); */
 }
 
 iframe {
-  /* - the size of the buttons */
-  height: calc(400px - var(--border-size) - var(--border-size) - 36.5px);
-  width: calc(400px - var(--border-size) - var(--border-size));
+  height: calc(400px - 30.5px - var(--padding) - var(--padding));
+  width: 400px;
   border-width: 0;
+  display: block;
 }
 
 /* https://www.w3schools.com/howto/howto_css_flip_box.asp */
 /* This container is needed to position the front and back side */
 .tile-inner {
-  position: relative;
-  width: 100%;
   height: 100%;
-  text-align: center;
+  width: 100%;
+  position: relative;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
@@ -81,7 +83,6 @@ iframe {
 
 /* Style the back side */
 .tile-back {
-  border: black solid 2px;
   transform: rotateY(180deg);
 }
 </style>

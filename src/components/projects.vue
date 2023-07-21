@@ -4,6 +4,7 @@
     <tile 
       img_src="/blog.jpg" 
       post="https://www.jasoneveleth.com/blog/2023/07/20/why-a-blog"
+      iframe_src="https://www.jasoneveleth.com/blog/2023/07/20/why-a-blog"
       url="https://www.jasoneveleth.com/blog" 
       title="Blog"/>
     <tile 

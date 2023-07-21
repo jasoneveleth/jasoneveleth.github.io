@@ -31,7 +31,7 @@ export default{
   --background-grey: #86898D;
   --text: #000;
   --nav-color: #fff;/*#9DD9F3;*/
-  --blurb-color: #fff;/*#B7E2F2;*/
+  --blurb-color: var(--contact-background);/*#B7E2F2;*/
   --projects-color: #fff;/*#d0edf6;*/
   --about-color: #fff; /*#d0edf6;*/
   --contact-background: #e9e9e9;/*#B7E2F2;*/
