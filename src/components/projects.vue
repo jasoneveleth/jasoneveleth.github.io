@@ -2,18 +2,18 @@
   <div class="main">
     <!-- TODO FIXME @/ -->
     <tile 
-      img_src="/assets/blog.jpg" 
+      img_src="/blog.jpg" 
       post="https://www.jasoneveleth.com/blog/2023/07/20/why-a-blog"
       url="https://www.jasoneveleth.com/blog" 
       title="Blog"/>
     <tile 
-      img_src="/assets/confetti.jpg" 
+      img_src="/confetti.jpg" 
       post="https://www.jasoneveleth.com/blog/2023/07/20/confetti"
       iframe_src="https://www.jasoneveleth.com/confetti" 
       url="https://www.jasoneveleth.com/confetti" 
       title="Confetti"/>
     <tile 
-      img_src="/assets/voronoi_full.png" 
+      img_src="/voronoi_full.png" 
       post="https://www.jasoneveleth.com/blog/2023/07/20/voronoi"
       iframe_src="https://www.jasoneveleth.com/blog/2023/07/20/voronoi"
       url="https://github.com/jasoneveleth/voronoi2"
