@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <!-- TODO FIXME @/ -->
     <tile 
       img_src="/blog.jpg" 
       post="https://www.jasoneveleth.com/blog/2023/07/20/why-a-blog"
@@ -19,10 +18,6 @@
       iframe_src="https://www.jasoneveleth.com/blog/2023/07/20/voronoi"
       url="https://github.com/jasoneveleth/voronoi2"
       title="Voronoi"/>
-    <!-- <div class="tile">strava problem</div> -->
-    <!-- <div class="tile">hdcms</div> -->
-    <!-- <div class="tile">notes app</div> -->
-    <!-- <div class="tile">b+w colorizer</div> -->
   </div>
 </template>
 
