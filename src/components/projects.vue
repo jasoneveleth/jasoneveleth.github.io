@@ -18,6 +18,12 @@
       iframe_src="https://www.jasoneveleth.com/blog/2023/07/20/voronoi"
       url="https://github.com/jasoneveleth/voronoi2"
       title="Voronoi"/>
+    <tile 
+      img_src="/hashfs.png" 
+      post="https://www.jasoneveleth.com/blog/2023/07/31/hashfs"
+      iframe_src="https://www.jasoneveleth.com/blog/2023/07/31/hashfs"
+      url="https://github.com/jasoneveleth/hashfs"
+      title="hashfs"/>
   </div>
 </template>
 
