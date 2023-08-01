@@ -14,8 +14,8 @@
       title="Confetti"/>
     <tile 
       img_src="/voronoi_full.png" 
-      post="https://www.jasoneveleth.com/blog/2023/07/20/voronoi"
-      iframe_src="https://www.jasoneveleth.com/blog/2023/07/20/voronoi"
+      post="https://www.jasoneveleth.com/blog/2023/07/20/voronoi-blog-post"
+      iframe_src="https://www.jasoneveleth.com/blog/2023/07/20/voronoi-blog-post"
       url="https://github.com/jasoneveleth/voronoi2"
       title="Voronoi"/>
     <tile 
