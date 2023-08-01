@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <h1><a href="https://jasoneveleth.com">Jason Eveleth</a></h1>
+    <h1><a href="https://www.jasoneveleth.com">Jason Eveleth</a></h1>
     <div class="filler"/>
     <div class="left">
       <h1 v-if="!this.projects" @click="$emit('projects_clicked')">Projects</h1>
