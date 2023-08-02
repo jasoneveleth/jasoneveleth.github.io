@@ -1,9 +1,10 @@
 <template>
   <div class="main">
-    <h1><a href="https://www.jasoneveleth.com">Jason Eveleth</a></h1>
+    <h1 id="my-name"><a href="https://www.jasoneveleth.com">Jason Eveleth</a></h1>
     <div class="filler"/>
     <div class="left">
       <h1 v-if="!this.projects" @click="$emit('projects_clicked')">Projects</h1>
+      <h1><a href="https://www.jasoneveleth.com/blog">Blog</a></h1>
       <h1 @click="$emit('about_clicked')">About</h1>
       <h1><a href="https://drive.google.com/file/d/10i6Xmc5ir-3ByHgffYpTXs34JQhAdDUp/view?usp=sharing">Resume</a></h1>
     </div>
@@ -19,6 +20,11 @@ export default{
 
 
 <style scoped>
+@media screen and (max-width: 600px) {
+  #my-name {
+    display: none;
+  }
+}
 .filler {
   flex-grow: 2;
   height: var(--nav-height);

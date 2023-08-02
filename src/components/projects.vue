@@ -1,11 +1,11 @@
 <template>
   <div class="main">
     <!-- note: iframe_src is default the post -->
-    <tile 
+    <!-- <tile 
       img_src="/blog.jpg" 
       post="https://www.jasoneveleth.com/blog/2023/07/20/why-a-blog"
       url="https://www.jasoneveleth.com/blog" 
-      title="Blog"/>
+      title="Blog"/> -->
     <tile 
       img_src="/confetti.jpg" 
       post="https://www.jasoneveleth.com/blog/2023/07/20/confetti"
@@ -54,6 +54,13 @@ export default{
   align-content: space-evenly;
   row-gap: 50px;
   column-gap: 50px;
+}
+
+@media screen and (max-width: 470px) {
+  .main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 </style>
 

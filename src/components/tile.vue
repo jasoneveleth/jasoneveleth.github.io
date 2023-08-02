@@ -65,7 +65,13 @@ iframe {
   width: 400px;
   border-width: 0;
   display: block;
-  overflow: hidden;
+}
+
+@media (hover: none) {
+  iframe {
+    overflow: hidden;
+    pointer-events: none;
+  }
 }
 
 /* https://www.w3schools.com/howto/howto_css_flip_box.asp */
@@ -79,7 +85,7 @@ iframe {
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.tile:hover .tile-inner {
+.tile:hover .tile-inner, .tile:active .tile-inner {
   transform: rotateY(180deg);
 }
 
