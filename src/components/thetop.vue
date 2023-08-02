@@ -46,6 +46,7 @@ export default{
   width: 100%;
   padding-right: 20px;
   padding-left: 20px;
+  z-index: 1;
 }
 h1 {
   cursor: pointer;
