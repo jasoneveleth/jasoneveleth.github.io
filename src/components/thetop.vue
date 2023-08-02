@@ -6,7 +6,7 @@
       <h1 v-if="!this.projects" @click="$emit('projects_clicked')">Projects</h1>
       <h1><a href="https://www.jasoneveleth.com/blog">Blog</a></h1>
       <h1 @click="$emit('about_clicked')">About</h1>
-      <h1><a href="https://drive.google.com/file/d/10i6Xmc5ir-3ByHgffYpTXs34JQhAdDUp/view?usp=sharing">Resume</a></h1>
+      <h1><a href="https://docs.google.com/document/d/1BfTzzSWARWQhIRfpXk9WrBmcgTAHUZlomkqM17gSCQU/edit?usp=sharing">Resume</a></h1>
     </div>
   </div>
 </template>
