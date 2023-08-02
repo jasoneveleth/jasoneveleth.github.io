@@ -65,6 +65,7 @@ iframe {
   width: 400px;
   border-width: 0;
   display: block;
+  overflow: hidden;
 }
 
 /* https://www.w3schools.com/howto/howto_css_flip_box.asp */
