@@ -62,7 +62,7 @@ img {
 
 iframe {
   height: calc(400px - 30.5px - var(--padding) - var(--padding));
-  width: 400px;
+  width: 100%;
   border-width: 0;
   display: block;
 }
