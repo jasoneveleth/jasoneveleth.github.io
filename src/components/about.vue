@@ -36,8 +36,14 @@
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  column-gap: 50px;
+  gap: 50px;
   min-height: calc(100% - 180.5px);
+}
+@media screen and (max-width: 650px) {
+  .main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 h1 {
   margin-top: 0;
