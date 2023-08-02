@@ -21,11 +21,21 @@ import mybutton from "./button.vue"
 
 export default{
   components: {mybutton},
-  props: ['img_src', 'post', 'url', 'title', 'iframe_src'],
+  props: {
+    img_src: String,
+    post: String,
+    url: String,
+    title: String,
+    iframe_src_prop: {default: false},
+  },
   data() {
     return {
+      iframe_src: null
     }
   },
+  mounted() {
+    this.iframe_src = this.iframe_src_prop || this.post
+  }
 }
 </script>
 

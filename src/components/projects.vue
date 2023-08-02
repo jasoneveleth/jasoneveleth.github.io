@@ -1,29 +1,32 @@
 <template>
   <div class="main">
+    <!-- note: iframe_src is default the post -->
     <tile 
       img_src="/blog.jpg" 
       post="https://www.jasoneveleth.com/blog/2023/07/20/why-a-blog"
-      iframe_src="https://www.jasoneveleth.com/blog/2023/07/20/why-a-blog"
       url="https://www.jasoneveleth.com/blog" 
       title="Blog"/>
     <tile 
       img_src="/confetti.jpg" 
       post="https://www.jasoneveleth.com/blog/2023/07/20/confetti"
-      iframe_src="https://www.jasoneveleth.com/confetti" 
+      iframe_src_prop="https://www.jasoneveleth.com/confetti" 
       url="https://www.jasoneveleth.com/confetti" 
       title="Confetti"/>
     <tile 
       img_src="/voronoi_full.png" 
       post="https://www.jasoneveleth.com/blog/2023/07/20/voronoi-blog-post"
-      iframe_src="https://www.jasoneveleth.com/blog/2023/07/20/voronoi-blog-post"
       url="https://github.com/jasoneveleth/voronoi2"
       title="Voronoi"/>
     <tile 
       img_src="/hashfs.png" 
       post="https://www.jasoneveleth.com/blog/2023/07/31/hashfs"
-      iframe_src="https://www.jasoneveleth.com/blog/2023/07/31/hashfs"
       url="https://github.com/jasoneveleth/hashfs"
       title="hashfs"/>
+    <tile
+      img_src="/waves.png"
+      post="https://www.jasoneveleth.com/blog/2023/08/01/wave-equation"
+      url="https://github.com/jasoneveleth/wave-equation-simulation"
+      title="Wave equation simulation"/>
   </div>
 </template>
 
