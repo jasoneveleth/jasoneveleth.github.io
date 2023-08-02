@@ -67,6 +67,7 @@ p {
   margin-top: 0;
   margin-bottom: 16px;
   color: #a6a2a0;
+  text-align: center;
 }
 a {
   color: inherit;
