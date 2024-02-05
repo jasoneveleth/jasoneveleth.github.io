@@ -27,6 +27,11 @@
       post="https://www.jasoneveleth.com/blog/2023/08/01/wave-equation"
       url="https://github.com/jasoneveleth/wave-equation-simulation"
       title="Wave equation simulation"/>
+    <tile
+      img_src="/cosmic-quest.png"
+      post="https://devpost.com/software/space-game-5yolw4"
+      url="https://www.jasoneveleth.com/space-game"
+      title="Hackathon"/>
   </div>
 </template>
 
