@@ -58,5 +58,8 @@ a {
   text-decoration: none;
   color: var(--text);
 }
+a:hover {
+  color: var(--svg-focus);
+}
 </style>
 
