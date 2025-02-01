@@ -1,10 +1,10 @@
 <template>
   <div class="main">
-    <img src="/profile_circle.png">
+    <img class="avatar" src="/profile_2025-02-01.jpg">
     <div class="blurb">
       <h1>Hi! I'm Jason.</h1>
       <p>
-        Computer Science Master's student at <b><a href="https://cs.brown.edu/">Brown</a></b>.
+        Computer Science graduate at <b><a href="https://cs.brown.edu/">Brown</a></b>.
       </p>
     </div>
   </div>
@@ -34,6 +34,9 @@ img {
 }
 h1 {
   margin: 0;
+}
+.avatar {
+  border-radius: 100%;
 }
 </style>
 
