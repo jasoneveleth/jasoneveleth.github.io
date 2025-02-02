@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <img src="/profile_small.jpg"/>
+    <img src="/profile_smaller.jpg"/>
     <div class="text">
       <h1>
         ABOUT
