@@ -4,7 +4,9 @@
     <div class="blurb">
       <h1>Hi! I'm Jason.</h1>
       <p>
-        Computer Science graduate at <b><a href="https://cs.brown.edu/">Brown</a></b>.
+        Computer Science graduate from <b><a class="brown" href="https://cs.brown.edu/">Brown</a></b>.
+        <br/>
+        Data analyst at <b><a class="cartesian" href="https://www.cartesian.com/">Cartesian</a></b>.
       </p>
     </div>
   </div>
@@ -24,10 +26,16 @@
 }
 .blurb {
 }
-a {
+.brown {
   color: var(--brown);
-
   text-decoration: none;
+}
+.cartesian {
+  text-decoration: none;
+  background: linear-gradient(60deg, #0C4A81, #0C4A81, #70236B, #DB092A, #0C4A81);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 img {
   height: 200px;
@@ -37,6 +45,9 @@ h1 {
 }
 .avatar {
   border-radius: 100%;
+}
+p {
+  line-height: 1.5;
 }
 </style>
 
