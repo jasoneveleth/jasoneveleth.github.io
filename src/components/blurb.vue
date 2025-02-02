@@ -4,9 +4,9 @@
     <div class="blurb">
       <h1>Hi! I'm Jason.</h1>
       <p>
-        Computer Science graduate from <b><a class="brown" href="https://cs.brown.edu/">Brown</a></b>.
+        Computer Science graduate from <b><a class="brown" target="_blank" href="https://cs.brown.edu/">Brown</a></b>.
         <br/>
-        Data analyst at <b><a class="cartesian" href="https://www.cartesian.com/">Cartesian</a></b>.
+        Data analyst at <b><a class="cartesian" target="_blank" href="https://www.cartesian.com/">Cartesian</a></b>.
       </p>
     </div>
   </div>
