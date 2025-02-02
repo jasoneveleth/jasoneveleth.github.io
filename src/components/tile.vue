@@ -4,7 +4,7 @@
 	<div class="clicky">
 	  <a target="_blank" :href="url"><mybutton text="Url"/></a>
 	  {{title}}
-	  <a :href="post"><mybutton text="Post"/></a>
+	  <a target="_blank" :href="post"><mybutton text="Post"/></a>
 	</div>
   </div>
 </template>

@@ -4,9 +4,9 @@
     <div class="blurb">
       <h1>Hi! I'm Jason.</h1>
       <p>
-        Computer Science graduate from <b><a class="brown" target="_blank" href="https://cs.brown.edu/">Brown</a></b>.
+        Computer Science Graduate from <b><a id="brown" target="_blank" href="https://cs.brown.edu/">Brown</a></b>.
         <br/>
-        Data analyst at <b><a class="cartesian" target="_blank" href="https://www.cartesian.com/">Cartesian</a></b>.
+        Data Analyst at <b><a id="cartesian" target="_blank" href="https://www.cartesian.com/">Cartesian</a></b>.
       </p>
     </div>
   </div>
@@ -26,11 +26,11 @@
 }
 .blurb {
 }
-.brown {
+#brown {
   color: var(--brown);
   text-decoration: none;
 }
-.cartesian {
+#cartesian {
   text-decoration: none;
   background: linear-gradient(60deg, #0C4A81, #0C4A81, #70236B, #DB092A, #0C4A81);
   -webkit-background-clip: text;
