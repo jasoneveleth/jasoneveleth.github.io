@@ -29,7 +29,7 @@
         </svg>
       </a>
     </div>
-    <p>© 2023 Jason Eveleth · Mockups from <a href="https://www.freepik.com/free-psd/digital-device-mockup_4264999.htm#query=mac%20mockup&position=3&from_view=keyword&track=ais">rawpixel.com/Freepik</a></p>
+    <p>© 2025 Jason Eveleth · Mockups from <a href="https://www.freepik.com/free-psd/digital-device-mockup_4264999.htm#query=mac%20mockup&position=3&from_view=keyword&track=ais">rawpixel.com/Freepik</a></p>
   </div>
 </template>
 
