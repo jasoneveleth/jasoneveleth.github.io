@@ -1,24 +1,19 @@
 <template>
-  <thetop v-on:about_clicked="this.about = true" v-on:projects_clicked="this.about = false" :projects="!about"/>
-  <about v-if="about"/>
-  <blurb v-if="!about"/>
-  <projects v-if="!about"/>
+  <thetop/>
+  <blurb/>
+  <projects/>
   <contact/>
 </template>
 
 <script>
-import about from "./components/about.vue"
 import thetop from "./components/thetop.vue"
 import blurb from "./components/blurb.vue"
 import projects from "./components/projects.vue"
 import contact from "./components/contact.vue"
 
 export default{
-  components: {thetop,about,blurb,projects,contact},
+  components: {thetop,blurb,projects,contact},
   data() {
-    return {
-      about: false,
-    }
   },
   mounted() {
 	(() => { // Custom logging
@@ -56,7 +51,6 @@ export default{
   --nav-color: #fff;/*#9DD9F3;*/
   --blurb-color: var(--contact-background);/*#B7E2F2;*/
   --projects-color: #fff;/*#d0edf6;*/
-  --about-color: #fff; /*#d0edf6;*/
   --contact-background: #e9e9e9;/*#B7E2F2;*/
 
   --button-color: #4587ff;

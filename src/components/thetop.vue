@@ -3,18 +3,14 @@
     <h1 id="my-name"><a href="https://www.jasoneveleth.com">Jason Eveleth</a></h1>
     <div class="filler"/>
     <div class="left">
-      <h1 v-if="!this.projects" @click="$emit('projects_clicked')">Projects</h1>
-      <h1><a href="https://www.jasoneveleth.com/blog">Blog</a></h1>
-      <h1 @click="$emit('about_clicked')">About</h1>
-      <h1><a href="https://docs.google.com/document/d/1BfTzzSWARWQhIRfpXk9WrBmcgTAHUZlomkqM17gSCQU/edit?usp=sharing">Resume</a></h1>
+      <h1><a target="_blank" href="https://www.jasoneveleth.com/blog">Blog</a></h1>
+      <h1><a target="_blank" href="https://docs.google.com/document/d/1BfTzzSWARWQhIRfpXk9WrBmcgTAHUZlomkqM17gSCQU/edit?usp=sharing">Resume</a></h1>
     </div>
   </div>
 </template>
 
 <script>
 export default{
-  props: ['projects'],
-  emits: ["about_clicked"],
 }
 </script>
 
