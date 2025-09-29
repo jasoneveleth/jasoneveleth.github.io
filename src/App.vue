@@ -51,7 +51,7 @@ export default{
   --nav-color: #fff;/*#9DD9F3;*/
   --blurb-color: var(--contact-background);/*#B7E2F2;*/
   --projects-color: #fff;/*#d0edf6;*/
-  --contact-background: #e9e9e9;/*#B7E2F2;*/
+  --contact-background: #F5F5F7;/*#B7E2F2;*/
 
   --button-color: #4587ff;
   --button-text-color: #fff;
