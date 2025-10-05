@@ -29,34 +29,40 @@ async function prerender() {
   const page = await browser.newPage();
   // Start CSS coverage before loading the page
   await page.coverage.startCSSCoverage();
+  
 
-  // Set the HTML content
   await page.goto(url, {
     waitUntil: 'networkidle0'
   });
 
-  console.log('🌐 network idle')
+  console.log('🌐 network idle');
   
-  // Wait for React to render (adjust selector to match your app)
+  // Wait for React to render
   await page.waitForSelector('#root > *', { timeout: 10000 });
   
   console.log('🎨 Extracting critical CSS...');
   const cssCoverage = await page.coverage.stopCSSCoverage();
   
-  // Combine all used CSS
+  // Combine all used CSS - get the full text from each stylesheet that was used
   let criticalCSS = '';
   for (const entry of cssCoverage) {
-    const css = entry.text;
-    const usedRanges = entry.ranges;
-    
-    // Extract only the used portions
-    for (const range of usedRanges) {
-      criticalCSS += css.slice(range.start, range.end) + '\n';
+    // Only include stylesheets that have any usage
+    if (entry.ranges.length > 0) {
+      const css = entry.text;
+      
+      // For each used range, extract that CSS
+      let usedCSS = '';
+      for (const range of entry.ranges) {
+        usedCSS += css.slice(range.start, range.end);
+      }
+      
+      criticalCSS += usedCSS + '\n';
     }
   }
-
- console.log(`📏 Critical CSS size: ${(criticalCSS.length / 1024).toFixed(2)}KB`);
-
+  
+  console.log(`📏 Critical CSS size: ${(criticalCSS.length / 1024).toFixed(2)}KB`);
+  console.log(`📊 Number of CSS files processed: ${cssCoverage.length}`);
+  
   // Get the fully rendered HTML
   let renderedHtml = await page.content();
   
@@ -65,18 +71,18 @@ async function prerender() {
     '</head>',
     `<style id="critical-css">${criticalCSS}</style></head>`
   );
-
+  
   // Make external stylesheets load asynchronously (non-blocking)
   renderedHtml = renderedHtml.replace(
     /<link([^>]*rel=["']stylesheet["'][^>]*)>/g,
     '<link$1 media="print" onload="this.media=\'all\'; this.onload=null;">'
   );
-
-  // Close browser
+  
+  // Close browser and server
   await browser.close();
   await previewServer.httpServer.close();
   
-  // Save the pre-rendered HTML back to index.html
+  // Save the pre-rendered HTML
   await fs.writeFile(indexPath, renderedHtml, 'utf-8');
   
   console.log('✅ Pre-render complete! Updated dist/index.html');
