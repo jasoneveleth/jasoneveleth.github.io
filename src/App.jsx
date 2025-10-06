@@ -17,9 +17,9 @@ const Label = ({ type }) => (
 
 function Tile() {
   return (
-    <div class="h-80 w-80 bg-blue-50">
-      <div class="h-1/2 bg-blue-100"/>
-      <div class="p-4 bg-white dark:bg-gray-800">
+    <div class="h-80 w-80 bg-blue-50 shadow-md rounded-lg">
+      <div class="h-1/2 bg-blue-100 rounded-t-lg"/>
+      <div class="px-4 pt-2 pb-3 bg-white dark:bg-gray-800 rounded-b-lg">
         <div class="flex flex-row justify-between">
           <h3 class="text-xl font-bold mb-2 text-left">Tile Title</h3>
           <div class="flex flex-row gap-2 mb-2">
@@ -29,7 +29,7 @@ function Tile() {
           </div>
         </div>
         <p class="text-gray-700 text-left leading-tight dark:text-white">This is a description of the tile content. It provides a brief overview of what the tile is about.</p>
-        <div class="flex flex-row gap-4 mt-4">
+        <div class="flex flex-row gap-4 mt-3">
           <div class="flex flex-row items-center border border-gray-300 rounded-lg px-1.5 py-1 gap-1">
             <ExternalLink size="16" />
             <div class="font-medium">link</div>
@@ -83,6 +83,9 @@ function App() {
         <button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-full transition-colors">
           show more
         </button>
+        <div class="text-gray-800 dark:text-gray-200 mt-6">
+          © 2025 Jason Eveleth
+        </div>
     </div>
   )
 }

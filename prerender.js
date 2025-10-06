@@ -43,36 +43,33 @@ async function prerender() {
   console.log('🎨 Extracting critical CSS...');
   const cssCoverage = await page.coverage.stopCSSCoverage();
   
-  // Combine all used CSS - get the full text from each stylesheet that was used
+  // critical doesn't work because somehow we're not pulling stuff, maybe modals or selectors or something
   let criticalCSS = '';
+//   for (const entry of cssCoverage) {
+//     // Only include stylesheets that have any usage
+//     if (entry.ranges.length > 0) {
+//       const css = entry.text;
+      
+//       // For each used range, extract that CSS
+//       let usedCSS = '';
+//       for (const range of entry.ranges) {
+//         usedCSS += css.slice(range.start, range.end);
+//       }
+      
+//       criticalCSS += usedCSS + '\n';
+//     }
+//   }
+  let allCSS = '';
   for (const entry of cssCoverage) {
-    // Only include stylesheets that have any usage
-    if (entry.ranges.length > 0) {
-      const css = entry.text;
-      
-      // For each used range, extract that CSS
-      let usedCSS = '';
-      for (const range of entry.ranges) {
-        usedCSS += css.slice(range.start, range.end);
-      }
-      
-      criticalCSS += usedCSS + '\n';
-    }
+    allCSS += entry.text + '\n';
   }
+  criticalCSS = allCSS
   
-  console.log(`📏 Critical CSS size: ${(criticalCSS.length / 1024).toFixed(2)}KB`);
-  console.log(`📊 Number of CSS files processed: ${cssCoverage.length}`);
-  
-  // Get the fully rendered HTML
   let renderedHtml = await page.content();
-  
-  // Inline critical CSS
-  renderedHtml = renderedHtml.replace(
+    renderedHtml = renderedHtml.replace(
     '</head>',
     `<style id="critical-css">${criticalCSS}</style></head>`
   );
-  
-  // Make external stylesheets load asynchronously (non-blocking)
   renderedHtml = renderedHtml.replace(
     /<link([^>]*rel=["']stylesheet["'][^>]*)>/g,
     '<link$1 media="print" onload="this.media=\'all\'; this.onload=null;">'
@@ -85,7 +82,28 @@ async function prerender() {
   // Save the pre-rendered HTML
   await fs.writeFile(indexPath, renderedHtml, 'utf-8');
   
+  // Measure file sizes
+  const stats = await fs.stat(indexPath);
+  const uncompressedSize = stats.size;
+  
+  // Simulate gzip compression to see what the wire size would be
+  const { gzip } = await import('zlib');
+  const { promisify } = await import('util');
+  const gzipAsync = promisify(gzip);
+  
+  const compressed = await gzipAsync(Buffer.from(renderedHtml));
+  const compressedSize = compressed.length;
+
   console.log('✅ Pre-render complete! Updated dist/index.html');
+  console.log(`📦 Gzipped: ${(compressedSize / 1024).toFixed(2)}KB, Uncompressed: ${(uncompressedSize / 1024).toFixed(2)}KB`);
+
+  if (compressedSize <= 14 * 1024) {
+    console.log('🎉 Fits in initial TCP window! (14KB)');
+  } else if (compressedSize <= 16 * 1024) {
+    console.log('✨ Close! Within 16KB target');
+  } else {
+    console.log(`⚠️  Exceeds target by ${((compressedSize - 16 * 1024) / 1024).toFixed(2)}KB`);
+  }
 }
 
 prerender().catch(err => {
