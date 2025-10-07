@@ -15,29 +15,25 @@ const Label = ({ type }) => (
   </div>
 )
 
-function Tile() {
+function Tile({ title, description, labels, links }) {
   return (
     <div class="h-80 w-80 bg-blue-50 shadow-md rounded-lg">
       <div class="h-1/2 bg-blue-100 rounded-t-lg"/>
       <div class="px-4 pt-2 pb-3 bg-white dark:bg-gray-800 rounded-b-lg">
         <div class="flex flex-row justify-between">
-          <h3 class="text-xl font-bold mb-2 text-left">Tile Title</h3>
+          <h3 class="text-xl font-bold mb-2 text-left">{title}</h3>
           <div class="flex flex-row gap-2 mb-2">
-            <Label type="game" />
-            <Label type="ml/ai" />
-            <Label type="live demo" />
+            {labels.map((label, i) => <Label key={i} type={label} />)}
           </div>
         </div>
-        <p class="text-gray-700 text-left leading-tight dark:text-white">This is a description of the tile content. It provides a brief overview of what the tile is about.</p>
+        <p class="text-gray-700 text-left leading-tight dark:text-white">{description}</p>
         <div class="flex flex-row gap-4 mt-3">
-          <div class="flex flex-row items-center border border-gray-300 rounded-lg px-1.5 py-1 gap-1">
-            <ExternalLink size="16" />
-            <div class="font-medium">link</div>
-          </div>
-          <div class="flex flex-row items-center border border-gray-300 rounded-lg px-1.5 py-1 gap-1">
-            <Code size="16" />
-            <div class="font-medium">code</div>
-          </div>
+          {links.map(([name, url, icon], i) => (
+            <a key={i} href={url} target="_blank" rel="noopener noreferrer" class="flex flex-row items-center border border-gray-300 rounded-lg px-1.5 py-1 gap-1 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+              {icon || <ExternalLink size="16" />}
+              <div class="font-medium">{name}</div>
+            </a>
+          ))}
         </div>
       </div>
     </div>
@@ -45,6 +41,36 @@ function Tile() {
 }
 
 function App() {
+  const projects = [
+    {
+      title: "Confetti Sim",
+      description: "Live physics simulation exploring falling confetti particles path. Uses camera matrices for rendering.",
+      labels: ["live demo"],
+      links: [
+        ["demo", "#"],
+        ["code", "#", (<Code size="16"/>)],
+      ]
+    },
+    {
+      title: "Voronoi Sim",
+      description: "Grain coarsening simulation using Voronoi diagrams to model foam evolution.",
+      labels: [],
+      links: [
+        ["demo", "#"],
+        ["code", "#"],
+      ]
+    },
+    {
+      title: "HashFS",
+      description: "File system tool that generates file system tree based on content hashes. Outputs an HTML of the directory tree.",
+      labels: [],
+      links: [
+        ["demo", "#"],
+        ["code", "#"],
+      ]
+    }
+  ];
+
   return (
     <div class="bg-white w-full h-full dark:bg-gray-900 dark:text-white">
       <div class="flex flex-row items-center gap-4 mb-4">
@@ -68,17 +94,10 @@ function App() {
           <div class="font-medium">resume</div>
         </div>
       </div>
-      <div className="m-4 flex justify-center">
-        <div className="animate-bounce">
-          <svg className="w-6 h-6 text-gray-400" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor" >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-        </div>
-      </div>
-      <div class="flex flex-row flex-wrap justify-center gap-8 mb-8">
-        <Tile />
-        <Tile />
-        <Tile />
+      <div class="flex flex-row flex-wrap justify-center gap-8 mb-8 mt-5">
+        {projects.map((project, i) => (
+          <Tile key={i} {...project} />
+        ))}
       </div>
         <button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-full transition-colors">
           show more
