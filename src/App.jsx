@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Github, Linkedin, Mail, ExternalLink, Code, FileText, BookOpen, SquareUserRound } from 'lucide-react';
+import {Linkedin} from './Icons.jsx'
+import { SiMaterialdesign, SiGithub } from '@icons-pack/react-simple-icons';
+import { Radio, Mail, ExternalLink, Code, FileText, Notebook, SquareUserRound, NotebookText } from 'lucide-react';
 import './App.css'
 
 const labelStyles = {
@@ -10,29 +10,129 @@ const labelStyles = {
   "live demo": "bg-cyan-100 text-cyan-800 dark:bg-cyan-300 dark:text-cyan-900"
 }
 const Label = ({ type }) => (
-  <div className={`${labelStyles[type]} text-xs font-medium px-2.5 py-1 rounded-full flex items-center`}>
+  <div className={`${labelStyles[type]} text-sm font-medium px-1 rounded-sm`}>
     {type}
   </div>
 )
 
-function Tile({ title, description, labels, links }) {
+function Button({ href, variant, children }) {
+  const classes = {
+    // "primary": "bg-blue-500 dark:text-black dark:bg-white text-white hover:bg-blue-400",
+    // "secondary": "bg-blue-50 text-blue-600 hover:bg-gray-50"
+    "primary": "bg-black dark:text-black dark:bg-white text-white hover:bg-gray-700 dark:hover:bg-gray-200",
+    "secondary": "bg-gray-100 hover:bg-gray-50 dark:text-black dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
+  }[variant]
   return (
-    <div class="h-80 w-80 bg-blue-50 shadow-md rounded-lg">
-      <div class="h-1/2 bg-blue-100 rounded-t-lg"/>
-      <div class="px-4 pt-2 pb-3 bg-white dark:bg-gray-800 rounded-b-lg">
-        <div class="flex flex-row justify-between">
-          <h3 class="text-xl font-bold mb-2 text-left">{title}</h3>
-          <div class="flex flex-row gap-2 mb-2">
+   <a href={href} target="_blank" rel="noopener noreferrer" className={`flex flex-row items-center rounded-lg px-2.5 py-1 gap-1 ${classes}`}>
+     {children}
+   </a>
+  )
+}
+
+const projects = [
+  {
+    title: "Confetti Sim",
+    description: "Live physics simulation exploring falling confetti particles path. Uses camera matrices for rendering.",
+    labels: ["live demo"],
+    links: [
+      ["demo", "https://www.jasoneveleth.com/confetti/"],
+      ["github", "https://github.com/jasoneveleth/confetti"],
+      ["post", "https://www.jasoneveleth.com/blog/2023/07/20/confetti"],
+    ],
+    thumbnail: "/confetti.png"
+  },
+  {
+    title: "Voronoi Sim",
+    description: "Grain coarsening simulation using Voronoi diagrams to model foam evolution.",
+    labels: [],
+    links: [
+      ["github", "https://github.com/jasoneveleth/voronoi2"],
+      ["post", "https://www.jasoneveleth.com/blog/2023/07/20/voronoi-blog-post"]
+    ],
+    thumbnail: "/voronoi.png"
+  },
+  {
+    title: "Game of 24 Solver",
+    description: "A website that provides all possible solutions to a game of 24 problem, a classic arithmetic card game.",
+    labels: ["game", "ml/ai"],
+    links: [
+      ["demo", "http://jason.pub/game-of-24-app"],
+      ["github", "https://github.com/jasoneveleth/game-of-24-app"],
+    ],
+    thumbnail: "/hash-fs.png"
+  },
+  {
+    title: "HashFS",
+    description: "File system tool that generates file system tree based on content hashes. Outputs an HTML of the directory tree.",
+    labels: [],
+    links: [
+      ["github", "https://github.com/jasoneveleth/hashfs"],
+      ["post", "https://www.jasoneveleth.com/blog/2023/07/31/hashfs"],
+    ],
+    thumbnail: "/hash-fs.png"
+  },
+  {
+    title: "Wave Equation Simulation",
+    description: "I've always been curious how to simulate waves or droplets, and I documented my exploration.",
+    labels: [],
+    links: [
+      ["github", "https://github.com/jasoneveleth/wave-equation-simulation"],
+      ["post", "https://www.jasoneveleth.com/blog/2023/08/01/wave-equation"],
+
+    ],
+    thumbnail: "/hash-fs.png"
+  },
+  {
+    title: "Hackathon Space Game",
+    description: "A game designed to simulate driving a space ship through gravity.",
+    labels: ["game"],
+    links: [
+      ["demo", "https://www.jasoneveleth.com/space-game"],
+      ["github", "https://github.com/jasoneveleth/space-game/"],
+      ["post", "https://devpost.com/software/space-game-5yolw4"],
+    ],
+    thumbnail: "/hash-fs.png"
+  },
+  // todo app?
+];
+
+function Tile({ title, description, labels, links, thumbnail }) {
+  const link_icons = {
+    "demo": (<Radio size="14"/>),
+    "github": (<SiGithub size={14}/>),
+    "post": (<NotebookText size="14"/>)
+  }
+
+  const link_button_variant = {
+    "demo": "primary",
+    "github": "secondary",
+    "post": "secondary"
+
+  }
+  const [imageLoaded, setImageLoaded] = useState(false)
+  return (
+    <div className="h-80 w-80 shadow-md rounded-lg">
+      <img 
+        className="h-1/2 rounded-t-lg" 
+        src={thumbnail}
+        onLoad={() => setImageLoaded(true)}
+        style={{ display: imageLoaded ? 'block' : 'none' }}
+      />
+      {!imageLoaded && <div className="h-1/2 rounded-t-lg shimmer"/>}
+      <div className="px-4 pt-2 pb-3 bg-white dark:bg-gray-800 rounded-b-lg">
+        <div className="flex flex-row justify-between">
+          <h3 className="text-xl font-bold mb-2 text-left">{title}</h3>
+          <div className="flex flex-row gap-2 mb-2 items-center">
             {labels.map((label, i) => <Label key={i} type={label} />)}
           </div>
         </div>
-        <p class="text-gray-700 text-left leading-tight dark:text-white">{description}</p>
-        <div class="flex flex-row gap-4 mt-3">
-          {links.map(([name, url, icon], i) => (
-            <a key={i} href={url} target="_blank" rel="noopener noreferrer" class="flex flex-row items-center border border-gray-300 rounded-lg px-1.5 py-1 gap-1 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-              {icon || <ExternalLink size="16" />}
-              <div class="font-medium">{name}</div>
-            </a>
+        <p className="text-gray-700 text-left leading-tight dark:text-white">{description}</p>
+        <div className="flex flex-row gap-4 mt-3">
+          {links.map(([name, url], i) => (
+            <Button variant={link_button_variant[name]} href={url} key={i}>
+              {link_icons[name] ?? (<ExternalLink size="14" />)}
+              <div className="font-medium -translate-y-px">{name}</div>
+            </Button>
           ))}
         </div>
       </div>
@@ -41,70 +141,78 @@ function Tile({ title, description, labels, links }) {
 }
 
 function App() {
-  const projects = [
-    {
-      title: "Confetti Sim",
-      description: "Live physics simulation exploring falling confetti particles path. Uses camera matrices for rendering.",
-      labels: ["live demo"],
-      links: [
-        ["demo", "#"],
-        ["code", "#", (<Code size="16"/>)],
-      ]
-    },
-    {
-      title: "Voronoi Sim",
-      description: "Grain coarsening simulation using Voronoi diagrams to model foam evolution.",
-      labels: [],
-      links: [
-        ["demo", "#"],
-        ["code", "#"],
-      ]
-    },
-    {
-      title: "HashFS",
-      description: "File system tool that generates file system tree based on content hashes. Outputs an HTML of the directory tree.",
-      labels: [],
-      links: [
-        ["demo", "#"],
-        ["code", "#"],
-      ]
-    }
-  ];
-
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [showMore, setShowMore] = useState(false)
   return (
-    <div class="bg-white w-full h-full dark:bg-gray-900 dark:text-white">
-      <div class="flex flex-row items-center gap-4 mb-4">
-        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex-shrink-0"/>
-        <h1 class="text-4xl font-bold tracking-tight">
-          Jason Eveleth
-        </h1>
+    <div className="bg-white w-full h-full dark:bg-gray-900 dark:text-white">
+      <div className="flex flex-col mb-4 max-w-200 mx-auto">
+        <div className="flex flex-row items-center gap-4 mb-4">
+          <img 
+            className="w-16 h-16 rounded-full flex-shrink-0" 
+            src="/profile256px.png"
+            onLoad={() => setImageLoaded(true)}
+            style={{ display: imageLoaded ? 'block' : 'none' }}
+          />
+          {!imageLoaded && <div className="w-16 h-16 rounded-full flex-shrink-0 shimmer"/>}
+          <h1 className="text-4xl font-bold tracking-tight">
+            Jason Eveleth
+          </h1>
+        </div>
+        <h2 className="text-xl text-gray-800 mb-4 dark:text-white">
+          I'm a passionate mathematician and computer scientist. 
+          From programming languages and algorithms to AI and machine learning, 
+          I love challenges, and I aim to constantly deepen my understanding and hone my problem-solving skills. 
+          Below are some of the projects I've worked on.
+        </h2>
       </div>
-      <h2 class="text-2xl text-gray-800 mb-4 dark:text-white">explore the math and cs I'm interested in</h2>
-      <div class="flex flex-row justify-center gap-4 mb-4">
-        <div class="flex flex-row items-center border border-gray-300 rounded-lg px-1.5 py-1 gap-1">
-          <BookOpen size="16" />
-          <div class="font-medium">blog</div>
-        </div>
-        <div class="flex flex-row items-center border border-gray-300 rounded-lg px-1.5 py-1 gap-1">
-          <SquareUserRound size="16" />
-          <div class="font-medium">about</div>
-        </div>
-        <div class="flex flex-row items-center border border-gray-300 rounded-lg px-1.5 py-1 gap-1">
-          <FileText size="16" />
-          <div class="font-medium">resume</div>
-        </div>
+      <div className="flex flex-row justify-center gap-4 mb-4">
+        <Button href="https://www.jasoneveleth.com/blog" variant="primary">
+          <Notebook size="14" />
+          <div className="font-medium -translate-y-px">blog</div>
+        </Button>
+        {/* <div className="flex flex-row items-center border border-gray-300 rounded-lg px-1.5 py-1 gap-1">
+          <SquareUserRound size="14" />
+          <div className="font-medium">about</div>
+        </div> */}
+        <Button variant="secondary" href="https://docs.google.com/document/d/1BfTzzSWARWQhIRfpXk9WrBmcgTAHUZlomkqM17gSCQU/edit?usp=sharing">
+          <FileText size="14" />
+          <div className="font-medium -translate-y-px">resume</div>
+        </Button>
       </div>
-      <div class="flex flex-row flex-wrap justify-center gap-8 mb-8 mt-5">
+      {showMore ?
+      (<div className="flex flex-row flex-wrap justify-center gap-8 mb-8 mt-5 max-w-300">
         {projects.map((project, i) => (
           <Tile key={i} {...project} />
         ))}
-      </div>
-        <button class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-full transition-colors">
-          show more
+      </div>):
+      (<div className="flex flex-row flex-wrap justify-center gap-8 mb-8 mt-5 max-w-300">
+        {projects.slice(0,3).map((project, i) => (
+          <Tile key={i} {...project} />
+        ))}
+      </div>)}
+        <button className="bg-gray-100 dark:bg-white dark:text-black px-3 py-1 rounded-full transition-colors font-medium hover:bg-gray-50 cursor-pointer"
+        onClick={() => setShowMore(!showMore)}>
+          {showMore ? "show less" : "show more"}
         </button>
-        <div class="text-gray-800 dark:text-gray-200 mt-6">
+      <footer className="mt-12 mb-8">
+        <div className="flex flex-row justify-center gap-6 mb-4">
+          <a href="https://github.com/jasoneveleth" target="_blank" rel="noopener noreferrer" 
+            className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+            <SiGithub size={24} />
+          </a>
+          <a href="https://www.linkedin.com/in/jasoneveleth/" target="_blank" rel="noopener noreferrer"
+            className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+            <Linkedin size={24} />
+          </a>
+          <a href="mailto:me@jasoneveleth.com"
+            className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+            <Mail size={24} />
+          </a>
+        </div>
+        <div className="text-gray-600 dark:text-gray-400 text-sm">
           © 2025 Jason Eveleth
         </div>
+      </footer>
     </div>
   )
 }
