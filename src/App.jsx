@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {Linkedin} from './Icons.jsx'
 import { SiMaterialdesign, SiGithub } from '@icons-pack/react-simple-icons';
 import { Radio, Mail, ExternalLink, Code, FileText, Notebook, SquareUserRound, NotebookText } from 'lucide-react';
@@ -143,6 +143,27 @@ function Tile({ title, description, labels, links, thumbnail }) {
 function App() {
   const [imageLoaded, setImageLoaded] = useState(false)
   const [showMore, setShowMore] = useState(false)
+  useEffect(() => { // Custom logging
+    const data = {
+            user_agent: navigator.userAgent,
+            timestamp: new Date().toISOString(),
+            screen_width: window.screen.width,
+            screen_height: window.screen.height,
+            viewport_width: window.innerWidth,
+            viewport_height: window.innerHeight,
+            language: navigator.language,
+            timezone_offset: new Date().getTimezoneOffset(),
+            referrer: document.referrer,
+            page: window.location.href,
+    };
+    fetch("https://logging.jsn.vet:5000/analytics", {
+            method: "POST",
+            headers: {
+                    "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+    }).catch(t => console.error("Analytics request failed:", t));
+  }, [])
   return (
     <div className="bg-white w-full h-full dark:bg-gray-900 dark:text-white">
       <div className="flex flex-col mb-4 max-w-200 mx-auto">
