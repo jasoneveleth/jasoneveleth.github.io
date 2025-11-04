@@ -156,7 +156,7 @@ function App() {
             referrer: document.referrer,
             page: window.location.href,
     };
-    fetch("https://logging.jsn.vet:5000/analytics", {
+    fetch("https://logging.jason.pub:5000/analytics", {
             method: "POST",
             headers: {
                     "Content-Type": "application/json"
