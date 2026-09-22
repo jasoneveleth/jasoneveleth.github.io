@@ -56,7 +56,7 @@ const projects = [
     description: "A website that provides all possible solutions to a game of 24 problem, a classic arithmetic card game.",
     labels: ["game", "ml/ai"],
     links: [
-      ["demo", "http://jason.pub/game-of-24-app"],
+      ["demo", "http://jasoneveleth.com/game-of-24-app"],
       ["github", "https://github.com/jasoneveleth/game-of-24-app"],
     ],
     thumbnail: "/hash-fs.png"
@@ -112,9 +112,10 @@ function Tile({ title, description, labels, links, thumbnail }) {
   const [imageLoaded, setImageLoaded] = useState(false)
   return (
     <div className="h-80 w-80 shadow-md rounded-lg">
-      <img 
-        className="h-1/2 rounded-t-lg" 
+      <img
+        className="h-1/2 rounded-t-lg"
         src={thumbnail}
+        ref={(node) => { if (node?.complete) setImageLoaded(true) }}
         onLoad={() => setImageLoaded(true)}
         style={{ display: imageLoaded ? 'block' : 'none' }}
       />
@@ -168,9 +169,10 @@ function App() {
     <div className="bg-white w-full h-full dark:bg-gray-900 dark:text-white">
       <div className="flex flex-col mb-4 max-w-200 mx-auto">
         <div className="flex flex-row items-center gap-4 mb-4">
-          <img 
-            className="w-16 h-16 rounded-full flex-shrink-0" 
+          <img
+            className="w-16 h-16 rounded-full flex-shrink-0"
             src="/profile256px.png"
+            ref={(node) => { if (node?.complete) setImageLoaded(true) }}
             onLoad={() => setImageLoaded(true)}
             style={{ display: imageLoaded ? 'block' : 'none' }}
           />

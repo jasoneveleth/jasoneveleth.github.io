@@ -26,4 +26,11 @@ export default defineConfig([
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
   },
+  {
+    // Build-time script that runs in Node, not the browser.
+    files: ['prerender.js'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
 ])

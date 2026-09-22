@@ -1,9 +1,12 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
+// The HTML in #root is prerendered at build time (see prerender.js), so we
+// hydrate — adopt the existing DOM — instead of creating a fresh root.
+hydrateRoot(
+  document.getElementById('root'),
   <StrictMode>
     <App />
   </StrictMode>,
